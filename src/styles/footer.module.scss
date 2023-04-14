@@ -1,0 +1,110 @@
+@import "./reuseables";
+@import "./variables.scss";
+
+.footerContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: $purple-color-light-1;
+    // margin-top: auto;
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    .lhs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 30%;
+        color: $black;
+        // flex-basis: 25%;
+        &__logoArea {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            .logoImage {
+                width: 32px;
+                height: 32px;
+            }
+            .name {
+                font-weight: $fontWeight-500;
+            }
+        }
+        &__info {
+            p {
+                font-size: $font-size-16 - 4px;
+                // color: $white;
+            }
+        }
+        &__socials {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+
+            span {
+                display: inline-flex;
+                cursor: pointer;
+                &:hover {
+                    svg {
+                        transform: translateY(-4px);
+                    }
+                }
+                svg {
+                    margin: auto;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    .rhs {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        color: $black;
+        // flex-basis: 60%;
+        width: 50%;
+        // border: 1px solid #fff;
+
+        .content {
+            // border: 1px solid #fff;
+            h4 {
+                margin-bottom: 20px;
+                white-space: nowrap;
+                width: fit-content;
+            }
+            &__links {
+                li {
+                    list-style: none;
+                    font-size: $font-size-16 - 4px;
+                    white-space: nowrap;
+                    margin-bottom: 4px;
+                }
+            }
+            .joinText {
+                width: 100%;
+                font-size: $font-size-16 - 4px;
+                margin-bottom: 20px;
+            }
+            &__subscribeArea {
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                border-radius: 24px;
+                overflow: hidden;
+                background-color: $white;
+                gap: 12px;
+                input {
+                    padding: 10px;
+                    border-radius: 24px;
+                    outline: none;
+                    border: none;
+                }
+                button {
+                    @include big-button;
+                    border-radius: 24px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@import './reuseables';
+@import './variables.scss';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: $white;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .logoImage {
+            display: inline-flex;
+        }
+        .name {
+            font-weight: $fontWeight-700;
+        }
+    }
+    &__button {
+        button {
+            @include big-button;
+        }
+    }
+}
