@@ -60,10 +60,10 @@
     .rhs {
         display: flex;
         align-items: flex-start;
-        gap: 24px;
+        gap: 32px;
         color: $black;
         // flex-basis: 60%;
-        width: 50%;
+        width: 55%;
         // border: 1px solid #fff;
 
         .content {
@@ -93,7 +93,8 @@
                 border-radius: 24px;
                 overflow: hidden;
                 background-color: $white;
-                gap: 12px;
+                gap: 0px;
+                // border: 1px solid #000;
                 input {
                     padding: 10px;
                     border-radius: 24px;
@@ -103,6 +104,9 @@
                 button {
                     @include big-button;
                     border-radius: 24px;
+                    white-space: nowrap;
+                    height: 100%;
+                    padding: 12px 24px;
                 }
             }
         }
