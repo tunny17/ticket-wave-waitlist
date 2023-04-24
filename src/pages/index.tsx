@@ -57,7 +57,7 @@ export default function Home() {
             <Image src={images.hero_bg_1} alt='Hero image' />
           </div>
           <h3>Tickets to unforgettable moment</h3>
-          <p>"Getting together to create unforgettable memories!"</p>
+          <p>&quot;Getting together to create unforgettable memories!&quot;</p>
           <div className={styles.searchArea}>
             <input type='text' placeholder='Email Address' />
             <button>Get Early Access</button>
