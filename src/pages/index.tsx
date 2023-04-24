@@ -1,11 +1,47 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
+import images from '../../public/images'
+import { CreateEventIcon, EasyManagementIcon, EfficientPaymentIcon, QuickTicketIcon, TrackIcon, UserFiendlyPlatformIcon } from '@/components/SVGs/SVGicons'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const whatweoffer = [
+    {
+      svg: <UserFiendlyPlatformIcon />,
+      name: 'User Fiendly Platform',
+      subtext: 'We prioritize a swift and data-efficient experience for our users, whether browsing on a mobile device or computer. Our platform emphasizes efficiency and ease of use, enabling users to access information quickly and with minimal data consumption.',
+    },
+    {
+      svg: <QuickTicketIcon />,
+      name: 'Quick Ticket Booking',
+      subtext: 'Easily book tickets for your preferred events on our user-friendly platform. After selecting your event, complete your booking and registration quickly. Upon confirmation, you will receive a QR code ticket via email for entry.',
+    },
+    {
+      svg: <CreateEventIcon />,
+      name: 'Create/Post Events',
+      subtext: 'Our platform enables you to quickly and freely create and publish events by entering the necessary information, including event details, date, time, location, and ticket categories, using an easy-to-use interface.',
+    },
+    {
+      svg: <EfficientPaymentIcon />,
+      name: 'Efficient payment',
+      subtext: 'Easily manage and track sales and commissions in real-time with our platform. Detailed reports help monitor earnings and funds can be instantly transferred to verified bank accounts worldwide. Enjoy fast and secure payment processing.',
+    },
+    {
+      svg: <EasyManagementIcon />,
+      name: 'Easy Event Management',
+      subtext: `Easily manage events from anywhere with our platform's user-friendly dashboard. Monitor ticket sales, view attendee lists, and export PDF reports effortlessly. Enjoy complete control and make informed decisions with real-time updates and changes.`,
+    },
+    {
+      svg: <TrackIcon />,
+      name: 'Track your performance',
+      subtext: 'Our platform offers real-time reporting for tracking sales, commissions, and visitor behavior, providing valuable insights to optimize event promotion and sales strategies. Detailed reports on attendance rates, revenue, and ticket sales are easily accessible, ensuring successful events.',
+    },
+  ]
+
   return (
     <>
       <Head>
@@ -14,8 +50,90 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <h2>Waitlist</h2>
+
+      <div className={styles.homepageBody}>
+        <div className={styles.heroSection}>
+          <div className={styles.heroSection__image}>
+            <Image src={images.hero_bg_1} alt='Hero image' />
+          </div>
+          <h3>Tickets to unforgettable moment</h3>
+          <p>&quot;Getting together to create unforgettable memories!&quot;</p>
+          <div className={styles.searchArea}>
+            <input type='text' placeholder='Email Address' />
+            <button>Get Early Access</button>
+          </div>
+        </div>
+
+        <div className={styles.offersSection}>
+          <h3>What we offer</h3>
+          <div className={styles.offersSection__cards}>
+            {
+              whatweoffer.map((each, index) => (
+                <div className={styles.eachService} key={index}>
+                  <span>{each.svg}</span>
+                  <h5>{each.name}</h5>
+                  <p>{each.subtext}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div className={styles.aboutSection}>
+          <h3>About Us</h3>
+          <p>Ticketwave is a cutting-edge, safe, and user-friendly event ticketing platform
+            in Nigeria designed to provide each user with a distinct experience,
+            whether as an event organizer or attendee. Our website enables event
+            enthusiasts to effortlessly search for upcoming events in their area,
+            such as musical festivals, concerts, conferences, virtual experiences,
+            shows, and seminars. We also utilize our social media platforms to promote
+            events to the right audience, without incurring any additional costs.</p>
+          <p>Our core expertise is in managing event ticketing (both paid and free),
+            attendee registration, and event check-in, streamlining the ticketing
+            process for event organizers and allowing them to concentrate on other
+            critical aspects of their event. By utilizing our online ticketing and
+            event registration platform, you can save both time and money,</p>
+        </div>
+
+        {/* <div className={styles.testimonialsSection}>
+          <h3>Testimonials</h3>
+          <p>Our Clients send us bunch of smilies with our services and we love them</p>
+          <div className={styles.eachTestimonial}>
+            <div className={styles.eachTestimonial__top}>
+              <div className={styles.image}>
+                <Image src={images.user} alt='user image' />
+              </div>
+              <p>Kemi Johnson</p>
+            </div>
+            <p>"I have been using this ticket website for years, and I can confidently
+              say it's the best in the market. The customer support is fantastic, and
+              the site is always up-to-date with the latest features. Thank you for
+              making ticket selling so easy!"</p>
+          </div>
+        </div> */}
+
+        {/* <div className={styles.joinSection}>
+          <h4>Join thousands of Customers</h4>
+          <p>Start your journey with us, by making your dream come true. </p>
+          <div className={styles.searchArea}>
+            <input type='text' placeholder='Email Address' />
+            <button>Get Early Access</button>
+          </div>
+        </div> */}
+
+        <div className={styles.getSoldSection}>
+          <div className={styles.getSoldSection__lhs}>
+            <h3>Get access to sold-out events and be part of the action!</h3>
+            <button>Sign Up</button>
+          </div>
+          <div className={styles.getSoldSection__rhs}>
+            <div className={styles.image}>
+              <Image src={images.logo_white} alt='logo' />
+              <p>Ticketwave</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </>
   )
