@@ -69,7 +69,7 @@ export default function Home() {
           <div className={styles.offersSection__cards}>
             {
               whatweoffer.map((each, index) => (
-                <div className={styles.eachService}>
+                <div className={styles.eachService} key={index}>
                   <span>{each.svg}</span>
                   <h5>{each.name}</h5>
                   <p>{each.subtext}</p>
